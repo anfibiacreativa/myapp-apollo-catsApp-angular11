@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+$default-gutter: 20px !default;
+$default-area: none !default;
+
+@mixin generate-grid($column-gap: $default-gutter, $row-gap: $default-gutter) {
+  display: grid;
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+  min-width: 0;
+}
+
+@mixin generate-grid-layout($layout-type, $areas: $default-area) {
+
+  
+  // Make sure the layout type is valid
+  @if not index(lt0 lt1 lt2 lt3 lt4 lt5 lt6 lt7, $layout-type) {
+    @warn 'Please make sure the layout type selected is valid, by checking the parameter definitions!';
+  }
+
+  @else {
+    grid-template-areas: $areas;
+
+    @if $layout-type == lt0 {
+      grid-template-columns: initial;
+    }
+
+    @if $layout-type == lt1 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @if $layout-type == lt2 {
+      grid-template-columns: 33% 2fr;
+    }
+
+    @if $layout-type == lt3 {
+      grid-template-columns: 2fr 33%;
+    }
+
+    @if $layout-type == lt4 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @if $layout-type == lt5 {
+      grid-template-columns: 25% 25% 2fr;
+    }
+
+    @if $layout-type == lt6 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @if $layout-type == lt7 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

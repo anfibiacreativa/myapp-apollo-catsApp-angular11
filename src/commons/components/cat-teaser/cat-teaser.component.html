@@ -1,0 +1,13 @@
+<section class="content__base">
+  <div class="notification__base">
+      <a class="notification__txt notification__txt--supporter" href="new-cat" title="Send another cat to space"> My cat to space!</a>
+  </div>
+  <ul class="teasergallery__base columncontrol__grid--lt2">
+    <li #lazyKitten *ngFor="let kitten of kittens"  attr.data-attr="{{urlPrefix}}{{kitten.name}}{{urlSuffix}}" class="teaser__base teaser__base--one">
+        <img class="teaser__image" src="" alt="pic of {{kitten.name}}" />
+        <h3 class="teaser__hl">{{kitten.name}}</h3>
+        <p class="teaser__summary">Lorem ipsum dolor sit amet bla bla bla</p>
+        <a class="teaser__link" href="#">Support {{kitten.name}} to space!</a>
+    </li>
+  </ul>
+</section>

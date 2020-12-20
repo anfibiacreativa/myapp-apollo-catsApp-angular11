@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.form {
+  &__inputWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 30px 0;
+    padding: 30px;
+  }
+
+  &__label {
+    font-size: 18px;
+    font-family: 'Verdana', Arial, Helvetica, sans-serif;
+    line-height: 3;
+  }
+
+  &__input,
+  &__button {
+    height: 40px;
+    border: 1px solid lightgrey;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    transition: background-color .3s linear;
+    background-color: #3394cc;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: #15557a;
+    }
+  }
+}
+
+input#name {
+  color: darkslategray;
+  font-size: 18px;
+  padding-left: 5px;
+}

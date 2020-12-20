@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// teaser styles
+.teaser {
+  &__base {
+    background-color: white;
+    padding: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  &__hl {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  &__summary,
+  &__link {
+    padding-top: 20px;
+    display: inline-block;
+    color: rgb(0, 75, 140);
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
