@@ -1,6 +1,6 @@
 # MyappApollo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3. It is to be used along with https://github.com/anfibiacreativa/myapp-server-ngSpain to load the kitten and launch them to space! 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3 but **manually upgraded to version 11.0.5** It is to be used along with https://github.com/anfibiacreativa/myapp-server-ngSpain to load the kitten and launch them to space! 
 
 
 ## Development server
