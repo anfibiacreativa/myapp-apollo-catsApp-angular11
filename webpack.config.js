@@ -5,6 +5,10 @@ module.exports = {
     publicPath: "http://localhost:4200/",
     uniqueName: "microfe1"
   },
+  optimization: {
+    // Only needed to bypass a temporary bug
+    runtimeChunk: false
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: "microfe1",
