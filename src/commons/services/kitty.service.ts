@@ -26,9 +26,9 @@ mutation createKitty($kitten: KittyInput) {
   providedIn: 'root'
 })
 export class KittyService {
-  kitten: Kitty[];
-  kitty: Kitty;
-  newKitty: KittyInput;
+  kitten!: Kitty[];
+  kitty!: Kitty;
+  newKitty!: KittyInput;
   
   constructor (
     private apollo: Apollo

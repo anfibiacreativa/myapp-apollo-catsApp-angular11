@@ -10,19 +10,22 @@ import { KittyService } from '../../services/kitty.service';
   styleUrls: ['./cat-teaser.component.scss']
 })
 export class CatTeaserComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChildren('lazyKitten') cats: QueryList<ElementRef<HTMLUListElement>>;
-  loading: boolean;
-  kittens: Kitty[];
+  @ViewChildren('lazyKitten')
+  cats!: QueryList<ElementRef<HTMLUListElement>>;
+  loading: boolean = false;
+  kittens!: Kitty[];
+
   config: any = {
     // Root margin determines distance from viewport in the Y axis
     rootMargin: '20px 0px',
     threshold: 0.03
   };
+  
   observer$: any;
   urlPrefix: String = '../../assets/kitten/';
   urlSuffix: String = '.png';
-  private querySubscription: Subscription;
-  private catsSubscription: Subscription;
+  private querySubscription!: Subscription;
+  private catsSubscription!: Subscription;
   constructor(
     private apollo: Apollo,
     private renderer: Renderer2,
@@ -42,11 +45,13 @@ export class CatTeaserComponent implements OnInit, OnDestroy, AfterViewInit {
       }, this.config);
   }
 
-  preloadCats(entry): void {
+  preloadCats(entry: Element): void {
     const srcValue = entry.getAttribute('data-attr');
     console.log(srcValue + ' pic of cat');
     const image = entry.firstChild as HTMLImageElement;
-    image.src = srcValue;
+    if (srcValue) {
+      image.src = srcValue;
+    }
   }
 
   watchCats(): void {
