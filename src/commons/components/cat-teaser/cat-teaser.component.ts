@@ -1,5 +1,5 @@
-import {Apollo} from 'apollo-angular';
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChildren, ElementRef, QueryList, Renderer2 } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChildren, ElementRef, QueryList, Renderer2, HostListener } from '@angular/core';
 import { Kitty } from '../../models/kitty';
 import { Subscription } from 'rxjs';
 import { KittyService } from '../../services/kitty.service';
@@ -14,6 +14,16 @@ export class CatTeaserComponent implements OnInit, OnDestroy, AfterViewInit {
   cats!: QueryList<ElementRef<HTMLUListElement>>;
   loading: boolean = false;
   kittens!: Kitty[];
+
+  @HostListener('window:message',['$event'])
+  onMessage(event: Event) {
+    console.log('I hear you parent');
+    window.scrollBy({ 
+      top: 250,
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
 
   config: any = {
     // Root margin determines distance from viewport in the Y axis
