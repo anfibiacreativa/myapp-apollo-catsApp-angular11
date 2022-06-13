@@ -14,7 +14,7 @@
     "webpack": "5.4.0"
   },
   "dependencies": {
-    "@angular-architects/module-federation": "^1.0.2",
+    "@angular-architects/module-federation": "^14.3.8",
     "@angular/animations": "~11.0.0",
     "@angular/common": "~11.0.0",
     "@angular/compiler": "~11.0.0",
@@ -53,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ngx-build-plus": "^14.0.0",
     "prettier": "^2.2.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
