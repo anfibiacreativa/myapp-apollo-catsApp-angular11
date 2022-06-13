@@ -1,4 +1,4 @@
-import {APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +22,7 @@ import { NewCatComponent } from '../commons/components/new-cat/new-cat.component
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ApolloModule,
     FormsModule,
     ReactiveFormsModule,
     GraphQLModule,

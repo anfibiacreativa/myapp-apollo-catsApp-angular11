@@ -16,6 +16,7 @@ export class NewCatComponent implements OnInit {
     private kittyService: KittyService
   ) { 
     this.addCatForm = this.formBuilder.group({
+      id: '',
       name: ''
     });
   }
