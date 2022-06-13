@@ -3,15 +3,21 @@
     <p class="notification__txt notification__txt--supporter">
         Send your cat to space now!
     </p>
-    <form [formGroup]="addCatForm" (ngSubmit)="onSubmit(addCatForm.value)">
+    {{addCatForm.value}}
+   <!--  <form [formGroup]="addCatForm" (ngSubmit)="onSubmit(addCatForm.value)">
         <div class="form__inputWrapper">
             <label for="name" class="form__label">
                 What's your lucky kitty's name?
             </label>
             <input class="form__input" id="name" type="text" formControlName="name">
+            // will fix this later to be a random auto-generated id
+            <label for="id" class="form__label">
+                Add a random id
+            </label>
+            <input class="form__input" id="id" type="text" formControlName="id">
             <button class="form__button" type="submit">Add Cat!</button>
         </div>
-    </form>
+    </form> -->
     <a href="astronaut-cats" class="form_tinyLink">Go back!</a>
     </div>
 </section>
