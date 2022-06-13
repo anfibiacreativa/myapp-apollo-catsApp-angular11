@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 # angular cache
-*/.angular/cache/*
+.angular/cache/*
