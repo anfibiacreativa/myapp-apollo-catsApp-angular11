@@ -1,24 +1,10 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-module.exports = {
-  output: {
-    publicPath: "http://localhost:4200/",
-    uniqueName: "microfe1"
+module.exports = withModuleFederationPlugin({
+
+  name: 'microfe1',
+  shared: {
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
-  optimization: {
-    // Only needed to bypass a temporary bug
-    runtimeChunk: false
-  },
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "microfe1",
-      remotes: {
-      },
-      library: { type: "var", name: "microfe1" },
-      filename: "remoteEntry.js",
-      exposes: {
-      },
-      shared: ["@angular/core", "@angular/common", "@angular/router"]       
-    })
-  ],
-};
+
+});
